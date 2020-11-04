@@ -1,0 +1,82 @@
+using System;
+
+namespace CSharp_Drills
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Let's Rock!");
+
+            AllUniqueCharacters();        
+        }
+
+
+        /*================================================
+         * Function: To check if a string contains all
+         * unique characters
+         * ===============================================*/
+        static void AllUniqueCharacters()
+        {
+            /*Checks to see if user would like to continue testing strings*/
+            int ContinueTesting = 1;
+            /*Character Tracker will determine if string a contains unique characters*/
+            bool [] CharacterTracker = new bool [126];
+
+            /*This while loop allow's the user to continue testing strings until they are done*/
+            while (ContinueTesting == 1)
+            {
+
+                /*Acquire string from user. Save a raw version */
+                Console.WriteLine("This module tests if a string contains all unqiue characters: Please enter a string you would like to check");
+                string RawUserInput = Console.ReadLine();
+                string TestString = RawUserInput.ToLower();
+                bool StringContainsAllUniqueChar = true;
+
+                /*Place holder variables for function*/
+                bool CurrentValue;
+                int CurrentValueArrPosition;
+
+                /*Iterate through string a and check/populate CharacterTracker*/
+                foreach (char Element in TestString)
+                {
+                    CurrentValueArrPosition = (int)Element;
+                    CurrentValue = (bool)CharacterTracker.GetValue(CurrentValueArrPosition);
+
+
+                    if (CurrentValue == true)
+                    {
+                        Console.WriteLine("I am so sorry, but the string \"" + RawUserInput + "\" " + "contains duplicate " + Element + "\'s");
+                        StringContainsAllUniqueChar = false;      
+                    }
+
+
+
+                    CharacterTracker.SetValue(true, CurrentValueArrPosition);
+
+                }
+
+                if(StringContainsAllUniqueChar==true)
+                    Console.WriteLine("Congrats!!!! \"" + RawUserInput + "\", contains all unqiue characters");
+
+                Console.WriteLine("Continue testing strings? 1 = yes, 0 = no");
+                ContinueTesting = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("ContinueTesting value:" + ContinueTesting);
+                
+                
+                //ViewContentsOfAnArray(CharacterTracker);
+
+            }
+        }
+
+        static void ViewContentsOfAnArray(bool[] Arr)
+        {
+            foreach (bool Element in Arr)
+            {
+                Console.WriteLine(Element);
+            }
+
+        }
+
+    }
+}
