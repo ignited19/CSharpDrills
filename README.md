@@ -1,5 +1,5 @@
 # CSharpDrills
 C Sharp Training
 
-This Repo contains C# training in the following areas:
-  -String processing and manipulation 
+This Repo contains C# training in the following areas:\
+ \t -String processing and manipulation 
