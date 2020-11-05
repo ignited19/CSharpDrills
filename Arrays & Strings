@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using System.Reflection;
 
 namespace CSharp_Drills
 {
@@ -7,8 +9,10 @@ namespace CSharp_Drills
         static void Main(string[] args)
         {
             Console.WriteLine("Let's Rock!");
+         
 
-            AllUniqueCharacters();        
+            //AllUniqueCharacters();
+            PermutationCheck();
         }
 
 
@@ -61,11 +65,64 @@ namespace CSharp_Drills
 
                 Console.WriteLine("Continue testing strings? 1 = yes, 0 = no");
                 ContinueTesting = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("ContinueTesting value:" + ContinueTesting);
+
                 
                 
                 //ViewContentsOfAnArray(CharacterTracker);
 
+            }
+        }
+
+        /*================================================
+         * Function: To check if a two strings are a 
+         * permutation of each other
+         * ===============================================*/
+
+        static void PermutationCheck ()
+        {
+
+            int ContinueTesting = 1;
+
+            /* Incorperate a while loop so user can continue testing until they are done*/
+            while (ContinueTesting == 1) {
+                
+                /*acquire the two strings that are going to be checked from the user*/
+                Console.WriteLine("Alright, lets do this! Please enter in the first string to check");
+                string a = Console.ReadLine();
+                Console.WriteLine("Great! Now please enter in the second string to check");
+                string b = Console.ReadLine();
+
+
+                /*Check to see if both string a and b have the same length, if not they cannot be permutations*/
+                if (a.Length != b.Length)
+                {
+                    Console.WriteLine("I am so sorry! String a has a length of: " + a.Length + " and string b has a length" +
+                        "of " + b.Length + ". They cannot be permutations");
+                    return;
+                }
+
+
+                /*Create character arrays for both string a & b so we can use orderby to sort them*/
+                char[] CharArr_StrA = a.ToLower().ToCharArray();
+                char[] CharArr_StrB = b.ToLower().ToCharArray();
+
+                /*sort both CharArr so we can easily spot the differences */
+                Array.Sort(CharArr_StrA);
+                Array.Sort(CharArr_StrB);
+
+                /*Check for differences between the two character arrays*/
+                for (int i = 0; i < CharArr_StrA.Length; i++)
+                {
+                    if (CharArr_StrA[i] != CharArr_StrB[i])
+                    {
+                        Console.WriteLine("I am sorry, but these two strings are not permutations of each other");
+                        return;
+                    }
+                }
+
+                Console.WriteLine("Hey! Look at that! They are permutations of each other!!");
+                Console.WriteLine("Continue testing strings? 1 = yes, 0 = no");
+                ContinueTesting = Convert.ToInt32(Console.ReadLine());
             }
         }
 
@@ -78,5 +135,13 @@ namespace CSharp_Drills
 
         }
 
+        static void ViewContentsOfAnArray(char[] Arr)
+        {
+            foreach (char Element in Arr)
+            {
+                Console.WriteLine(Element);
+            }
+
+        }
     }
 }
