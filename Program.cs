@@ -8,10 +8,11 @@ namespace CSharp_Drills
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Let's Rock! ");
+            Console.WriteLine("Let's Rock! \n");
             //StringDrills.AllUniqueCharacters();
             //StringDrills.PermutationCheck();
-            StringDrills.PalindromePermutationCheck();
+            //StringDrills.PalindromePermutationCheck();
+            //StringDrills.CheckStringDiff("","");
         }
 
         
