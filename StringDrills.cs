@@ -172,6 +172,96 @@ namespace CSharp_Drills
                 Console.WriteLine(UserInput_A + " cannot be a palindrome");
             }
         }
+        /*===========================================================
+         * This function is used to tell if the differences between
+         * these two strings are equal or less than one. So
+         * the 3 fundamental modifications you can make to a string
+         * is replacing characters, removing characters and adding 
+         * characters. So lets start!
+         * ========================================================*/
+        public static void CheckStringDiff (string a, string b)
+        {
+            bool Result;
+            if(a.Length == b.Length)
+            {
+                Result = ReplacementCheck(a, b);
+            } 
+            /* If a.length-1 is equal to b.length, then we know that A contains more chars*/
+            else if(a.Length - 1 ! == b.Length)
+            {
+                Result = InsertCheck(a, b);
+            }
+            /* If a.length-1 is equal to b.length, then we know that A contains less chars*/
+            else if (a.Length + 1  == b.Length)
+            {
+                Result = InsertCheck(a, b);
+            }
+            else
+            {
+                Result = false;
+            }
+
+            Console.WriteLine("Magic computer, tell us if these two strings contain no more than one difference: " + Result);
+
+
+
+
+
+
+
+            /* Embedded method to check and see if a replacement is
+             * nesscary to make the strings identical*/
+            static bool ReplacementCheck(string a, string b)
+            {
+                int NumberOfDifferences = 0;
+                char[] StringArr_A = a.ToCharArray();
+                char[] StringArr_B = b.ToCharArray();
+
+                /*Iterate through the char arrays to pinpoint differnces*/
+                for (int i = 0; i < a.Length; i++)
+                {
+                   if(StringArr_A[i] != StringArr_B[i])
+                    {
+                        NumberOfDifferences += 1;
+                    }
+
+                    
+                        
+                }
+
+                return (NumberOfDifferences <= 1);
+            }
+
+            static bool InsertCheck(string a, string b)
+            {
+                int Index_A = 0;
+                int Index_B = 0;
+                int NumberOfDifferences = 0;
+                int UpperLimit_A = a.Length;
+                int UpperLimit_B = b.Length;
+
+                while(Index_A < a.Length && Index_B < b.Length)
+                {
+                   if(a[Index_A] != b[Index_B])
+                    {
+                        NumberOfDifferences += 1;
+                        Index_A += 1;
+                    }
+                    else
+                    {
+                        Index_A += 1;
+                        Index_B += 1;
+                    }
+
+                    
+
+                    return (NumberOfDifferences <= 1);
+                }
+                return true;
+            }
+        }
+            
+
 
         public static void ViewContentsOfAnArray(bool[] Arr)
         {
