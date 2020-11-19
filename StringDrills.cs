@@ -173,7 +173,7 @@ namespace CSharp_Drills
             }
         }
         /*===========================================================
-         * This function is used to tell if the differences between
+         * Function: Check if the differences between
          * these two strings are equal or less than one. So
          * the 3 fundamental modifications you can make to a string
          * is replacing characters, removing characters and adding 
@@ -202,10 +202,6 @@ namespace CSharp_Drills
             }
 
             Console.WriteLine("Magic computer, tell us if these two strings contain no more than one difference: " + Result);
-
-
-
-
 
 
 
@@ -260,9 +256,45 @@ namespace CSharp_Drills
                 return true;
             }
         }
+
+        /*================================================
+         * Function: Compress strings i.e aabb = a2b2 to
+         * view how much a speicific character there is in
+         * the string
+         * ===============================================*/
+        public static void CompressString ()
+        {
+            Console.WriteLine("Hello! Please enter in a string you would like me to compress");
+
+
+            /*acquire string from user*/
+            int Count = 0;
+            string UserString = Console.ReadLine();
+            string Results = "";
+            char[] UserStringCharArr = UserString.ToCharArray();
+
+            /*sort so that characters are in order for the counting*/
+            Array.Sort(UserStringCharArr);
+
+            /* Iterate through the char array, comparing the next char. If there is a difference, add the current char and it's count
+             * to Results string for later display*/
+            for(int i = 0; i < UserStringCharArr.Length; i++)
+            {
+                Count++;
+
+                if( i + 1 >= UserStringCharArr.Length || UserStringCharArr[i] != UserStringCharArr[i + 1])
+                {
+                    Results += "" + UserStringCharArr[i] + Count;
+                    Count = 0;
+                }
+                
+            }
+
+            Console.WriteLine(Results);
+
             
 
-
+        }
         public static void ViewContentsOfAnArray(bool[] Arr)
         {
             foreach (bool Element in Arr)
