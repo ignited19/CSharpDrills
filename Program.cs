@@ -13,7 +13,8 @@ namespace CSharp_Drills
             //StringDrills.PermutationCheck();
             //StringDrills.PalindromePermutationCheck();
             //StringDrills.CheckStringDiff("","");
-            StringDrills.CompressString();
+            //StringDrills.CompressString();
+            LinkedListDrills.FindDuplicateNodes();
         }
 
         
