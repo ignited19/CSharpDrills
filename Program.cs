@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Reflection;
 
@@ -14,7 +14,9 @@ namespace CSharp_Drills
             //StringDrills.PalindromePermutationCheck();
             //StringDrills.CheckStringDiff("","");
             //StringDrills.CompressString();
-            LinkedListDrills.FindDuplicateNodes();
+
+            //LinkedListDrills.FindDuplicateNodes();
+            LinkedListDrills.KthToLastNode();
         }
 
         
