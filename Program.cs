@@ -14,9 +14,10 @@ namespace CSharp_Drills
             //StringDrills.PalindromePermutationCheck();
             //StringDrills.CheckStringDiff("","");
             //StringDrills.CompressString();
+            Console.WriteLine(StringDrills.CheckStringRotation("waterbottle", "erbottlewat"));
 
             //LinkedListDrills.FindDuplicateNodes();
-            LinkedListDrills.KthToLastNode();
+            //LinkedListDrills.KthToLastNode();
         }
 
         

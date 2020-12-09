@@ -7,7 +7,31 @@ namespace CSharp_Drills
     class StringDrills
     {
         
-        
+        /*==================================================
+         * Function: Check to see if s2 is a rotation of s1
+         * ================================================*/
+        public static bool CheckStringRotation(string s1, string s2)
+        {
+            int s1_len = s1.Length;
+            int s2_len = s2.Length;
+
+            /*Debugging*/
+            Console.WriteLine("Here is the length of s1 and s2 respectively: " + s1_len + ", " + s2_len);
+
+            /*If s2 is not the same length of s1 then it is not a rotation of s1*/
+            if(s1_len == s2_len && s1_len != 0)
+            {
+                string s1s1 = s1 + s1;
+
+                /*Debugging*/
+                Console.WriteLine("Value of s1s1: "+ s1s1);
+
+                CheckStringRotation(s1s1, s2);
+            }
+
+            return false;
+        }
+
         /*================================================
          * Function: To check if a string contains all
          * unique characters
