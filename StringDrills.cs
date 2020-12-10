@@ -6,25 +6,40 @@ namespace CSharp_Drills
 {
     class StringDrills
     {
-        
+
         /*==================================================
          * Function: Check to see if s2 is a rotation of s1
+         * Solution: The basic problem is searching to determine
+         * if the second string provided is a simple rotation
+         * of the first substring. We can observe this by
+         * concatenating s1s1. By having s1s1, regardless of
+         * were we decide to start the rotate on s1, all
+         * possibilites will be presented in s1s1, allowing
+         * for us to simply determine if the s2 substring
+         * can be found within s1s1.
          * ================================================*/
         public static bool CheckStringRotation(string s1, string s2)
         {
             int s1_len = s1.Length;
             int s2_len = s2.Length;
 
-            /*Debugging*/
-            Console.WriteLine("Here is the length of s1 and s2 respectively: " + s1_len + ", " + s2_len);
-
-            /*If s2 is not the same length of s1 then it is not a rotation of s1*/
+            /*If s2 is not the same length of s1, then it is not a rotation of s1*/
             if(s1_len == s2_len && s1_len != 0)
-            {
+            {   
                 string s1s1 = s1 + s1;
+                bool IsRotation = s1s1.Contains(s2);
+
 
                 /*Debugging*/
-                Console.WriteLine("Value of s1s1: "+ s1s1);
+                Console.WriteLine($"Value of s1: {s1} \nValue of s2: {s2} \nValue of s1s1: {s1s1}");
+
+                /*Debugging*/
+                Console.WriteLine($"Is s2 and rotation of s1: {IsRotation}");
+
+                if(IsRotation == true)
+                {
+                    return true;
+                }
 
                 CheckStringRotation(s1s1, s2);
             }
