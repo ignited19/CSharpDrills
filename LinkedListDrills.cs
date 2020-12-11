@@ -63,6 +63,7 @@ namespace CSharp_Drills
         * ===============================================*/
         public static void KthToLastNode()
         {
+            /*Set up LL for testing*/
             PopulateLinkedList();
             Console.WriteLine("Okay, which Kth to last node would you like me to acquire?");
             int UserKthInput = int.Parse(Console.ReadLine());
@@ -92,6 +93,43 @@ namespace CSharp_Drills
 
             
             
+        }
+        /*=================================================
+        * Function: Delete the middle node
+        * ===============================================*/
+        public static void DeleteMiddleNode()
+        {
+            /*Set up LL for testing*/
+            PopulateLinkedList();
+
+            LinkedListNode<string> Node_Current = LL.First;
+            LinkedListNode<string> Node_Runner = LL.First;
+
+
+
+            while(Node_Current != null)
+            {
+                if(Node_Current.Next != null)
+                    Node_Current = Node_Current.Next;
+                
+                if(Node_Current.Next.Next != null)
+                    Node_Runner = Node_Current.Next.Next;
+
+                //Console.WriteLine($"The values of the current node and runner: {Node_Current}, {Node_Runner}");
+            }
+
+
+            for (LinkedListNode<string> node = LL.First; node != null; node = node.Next)
+            {
+            
+              
+                
+
+            }
+
+          
+
+        
         }
 
         /*========================================================

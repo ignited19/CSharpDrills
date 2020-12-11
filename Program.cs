@@ -14,10 +14,11 @@ namespace CSharp_Drills
             //StringDrills.PalindromePermutationCheck();
             //StringDrills.CheckStringDiff("","");
             //StringDrills.CompressString();
-            StringDrills.CheckStringRotation("water", "atewr");
+            //StringDrills.CheckStringRotation("water", "atewr");
 
             //LinkedListDrills.FindDuplicateNodes();
             //LinkedListDrills.KthToLastNode();
+            LinkedListDrills.DeleteMiddleNode();
         }
 
         
