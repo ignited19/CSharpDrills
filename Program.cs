@@ -18,7 +18,10 @@ namespace CSharp_Drills
 
             //LinkedListDrills.FindDuplicateNodes();
             //LinkedListDrills.KthToLastNode();
-            LinkedListDrills.DeleteMiddleNode();
+            //LinkedListDrills.DeleteMiddleNode();
+
+            Scenarios.CoinCounter();
+            
         }
 
         

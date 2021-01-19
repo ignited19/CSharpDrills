@@ -119,13 +119,13 @@ namespace CSharp_Drills
             }
 
 
-            for (LinkedListNode<string> node = LL.First; node != null; node = node.Next)
-            {
+            //for (LinkedListNode<string> node = LL.First; node != null; node = node.Next)
+            //{
             
               
                 
 
-            }
+            //}
 
           
 
