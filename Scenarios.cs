@@ -7,6 +7,32 @@ namespace CSharp_Drills
     public class Scenarios
     {
         /*============================================================
+         * Question: Given an INT, return how many ones are in the
+         * binary representation on that value
+         * ==========================================================*/
+        public static void IntToBinary()
+        {
+            Console.WriteLine("Lets Rock! Please enter in a INT");
+            int UserInput = int.Parse(Console.ReadLine());
+            string UserInput_Binary = Convert.ToString(UserInput, 2);
+            int UserInput_Binar_Length = UserInput_Binary.Length;
+            
+            
+            int NumberOfOnes = 0;
+
+            for(int i = 0; i < UserInput_Binary.Length; i++)
+            {
+                if (UserInput_Binary[i] == '1')
+                    NumberOfOnes++;
+                Console.Write($"{UserInput_Binary[i]}");
+            }
+
+            Console.WriteLine($"\nNumber of ones in {UserInput} binary: {NumberOfOnes}");
+
+            
+        }
+
+        /*============================================================
          * Question: Given input X, repesent the value using the least 
          * amount of coins.
          * NOTE: Using American coin system

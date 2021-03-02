@@ -20,8 +20,11 @@ namespace CSharp_Drills
             //LinkedListDrills.KthToLastNode();
             //LinkedListDrills.DeleteMiddleNode();
 
-            Scenarios.CoinCounter();
-            
+            //Scenarios.CoinCounter();
+            //Recursion.CountDown_Recursive(10);
+            //Recursion.CountDown_NotRecursive(10);
+
+            Scenarios.IntToBinary();
         }
 
         
