@@ -314,12 +314,12 @@ namespace CSharp_Drills
              * a char array to sort and iterate through it later
              * =====================================================*/
             Console.WriteLine("Hello! Please enter in the first string you would like me to check");
-            a = Console.ReadLine();
+            a = Console.ReadLine().ToLower();
             charArray_a = a.ToCharArray();
             Array.Sort(charArray_a);
 
             Console.WriteLine("Great! Please enter in the second string you would like me to check");
-            b = Console.ReadLine();
+            b = Console.ReadLine().ToLower();
             charArray_b = b.ToCharArray();
             Array.Sort(charArray_b);
 
