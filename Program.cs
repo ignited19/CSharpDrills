@@ -15,16 +15,14 @@ namespace CSharp_Drills
             //StringDrills.CheckStringDiff("","");
             //StringDrills.CompressString();
             //StringDrills.CheckStringRotation("water", "atewr");
+            StringDrills.AnagramChecker();   
 
             //LinkedListDrills.FindDuplicateNodes();
             //LinkedListDrills.KthToLastNode();
             //LinkedListDrills.DeleteMiddleNode();
 
             //Scenarios.CoinCounter();
-            //Recursion.CountDown_Recursive(10);
-            //Recursion.CountDown_NotRecursive(10);
-
-            Scenarios.IntToBinary();
+            //Scenarios.IntToBinary();
         }
 
         

@@ -296,6 +296,68 @@ namespace CSharp_Drills
             }
         }
 
+        /*==================================================
+         * Function: Anagram checker. Anagrams are
+         * instances where by rearranging letters in a word
+         * can create a new word. Example: Cinema == Iceman
+         * ================================================*/
+        public static void AnagramChecker()
+        {
+            string a;
+            string b;
+            string difference = "";
+            char[] charArray_a;
+            char[] charArray_b;
+
+            /*=======================================================
+             * Obtain the raw string input from the user and create 
+             * a char array to sort and iterate through it later
+             * =====================================================*/
+            Console.WriteLine("Hello! Please enter in the first string you would like me to check");
+            a = Console.ReadLine();
+            charArray_a = a.ToCharArray();
+            Array.Sort(charArray_a);
+
+            Console.WriteLine("Great! Please enter in the second string you would like me to check");
+            b = Console.ReadLine();
+            charArray_b = b.ToCharArray();
+            Array.Sort(charArray_b);
+
+            /*automatically discount any cases where both strings are not equal*/
+            if (a.Length != b.Length)
+                Console.WriteLine("The two strings are not anagrams - Difference in length.\n" +
+                    $"{a}: character count is: {a.Length} \n" +
+                    $"{b}: character count is: {b.Length}");
+
+            /*================================================
+             * Because we did the string length check, we
+             * can create an array and iterate through
+             * the strings and populate the arrays
+             *==============================================*/
+            for(int i=0; i < charArray_a.Length; i++)
+            {
+                //Console.WriteLine($"{charArray_a[i]} , {charArray_b[i]}");
+                if (charArray_a[i] != charArray_b[i])
+                    difference += $"Index: {i}\n";
+            }
+
+            if (difference != "")
+                Console.WriteLine($"We came up on some differences, here are the positions that differ: \n{difference}");
+            else
+            {
+                Console.WriteLine($"Great news!!! {a} and {b} are anagrams!!!");
+            }
+
+
+
+            
+
+
+
+        }
+
+
+
         /*================================================
          * Function: Compress strings i.e aabb = a2b2 to
          * view how much a speicific character there is in
