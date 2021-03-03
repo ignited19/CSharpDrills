@@ -118,19 +118,42 @@ namespace CSharp_Drills
                 //Console.WriteLine($"The values of the current node and runner: {Node_Current}, {Node_Runner}");
             }
 
+        
+        }
 
-            //for (LinkedListNode<string> node = LL.First; node != null; node = node.Next)
-            //{
+        /*=====================================================
+        * Function: Divide a LL in the middle returning the start
+        * of the later half of the LL.
+        * ===================================================*/
+        public static LinkedListNode<string> DivideLL()
+        {
+
+            /*Set up LL for testing*/
+            PopulateLinkedList();
+
+            LinkedListNode<string> Node_Slow = LL.First;
+            LinkedListNode<string> Node_Runner = LL.First;
             
-              
-                
 
-            //}
+            while (Node_Runner.Next != null)
+            {
+                
+                Node_Runner = Node_Runner.Next.Next;
+                Node_Slow = Node_Slow.Next;
+
+                if (Node_Runner == null)
+                    break;
+            }
+
+            Console.WriteLine($"Slow: {Node_Slow.Value}");
+            
+            Console.ReadKey();
+            return Node_Slow;
 
           
 
-        
         }
+
 
         /*========================================================
          * Function: View the LL
