@@ -7,12 +7,34 @@ namespace CSharp_Drills
 {
     public class Scenarios
     {
+        /*===========================================================
+         * Question: Swap the values of two variables without using
+         * a temp variables
+         * =========================================================*/
+        public static void SwapValues(int a, int b)
+        {
+            string bitRep_a = Convert.ToString(a, 2);
+            string bitRep_b = Convert.ToString(b, 2);
+
+            Console.WriteLine($"Inital value (in bits) for {a} =  {bitRep_a} and {b} = {bitRep_b}");
+            /*============================================================
+             * The logic behind this. Let a = 2, and b = 4
+             * a = 2 ^ 4 -> a = 6
+             * b = 6 ^ 4 -> b = 2 (the value of a initially)
+             * a = 6 ^ 4 -> a = 4 (the value of b initially)
+             * =========================================================*/
+            a = a ^ b;
+            Console.WriteLine($"Current value for a = {Convert.ToString(a,2)}");
+            b = a ^ b;
+            Console.WriteLine($"Current value for b = {Convert.ToString(b, 2)} ");
+            a = a ^ b;
+
+            Console.WriteLine($"Swapped value for a = {a} and b = {b} ");
+
+        }
+
         /*============================================================
-         * Given an INT, rotate the bits
-         * 8 in binary = 0000100
-         * 8 << 2 = 00100000
-         * 
-         * 32-1
+         * Question: Given an INT, rotate the bits
          * ==========================================================*/
         public static void RotateBits()
         {
@@ -26,9 +48,7 @@ namespace CSharp_Drills
 
             userInputBit = Convert.ToString(userInputInt, 2);
 
-            Console.WriteLine(8 >> 1 | 8<<1);
-
-
+            Console.WriteLine(positionsToRotate >> 1 | positionsToRotate << 1);
 
         }
 
