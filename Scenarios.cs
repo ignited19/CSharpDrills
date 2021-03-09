@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,31 @@ namespace CSharp_Drills
 {
     public class Scenarios
     {
+        /*============================================================
+         * Given an INT, rotate the bits
+         * 8 in binary = 0000100
+         * 8 << 2 = 00100000
+         * 
+         * 32-1
+         * ==========================================================*/
+        public static void RotateBits()
+        {
+            int userInputInt;
+            int positionsToRotate = 8;
+            string userInputBit;
+            
+            
+            Console.WriteLine("Hello, lets get started. Please provide me with an INT you would like to be shifted");
+            userInputInt = int.Parse(Console.ReadLine());
+
+            userInputBit = Convert.ToString(userInputInt, 2);
+
+            Console.WriteLine(8 >> 1 | 8<<1);
+
+
+
+        }
+
         /*============================================================
          * Question: Given an INT, return how many ones are in the
          * binary representation on that value

@@ -21,11 +21,12 @@ namespace CSharp_Drills
             //LinkedListDrills.KthToLastNode();
             //LinkedListDrills.DeleteMiddleNode();
             //LinkedListDrills.DivideLL();
-
-            Tree.createTree();
+            LinkedListDrills.PrintLLBackwards();
+            //Tree.createTree();
 
             //Scenarios.CoinCounter();
             //Scenarios.IntToBinary();
+            //Scenarios.RotateBits();
         }
 
         

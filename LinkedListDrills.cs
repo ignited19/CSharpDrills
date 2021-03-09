@@ -154,6 +154,34 @@ namespace CSharp_Drills
 
         }
 
+        /*=======================================================
+         * Function: Print a LL backwards
+         * =====================================================*/
+        public static void PrintLLBackwards()
+        {
+            /*Promp user to create a LL */
+            PopulateLinkedList();
+
+            LinkedListNode<string> FirstNode = LL.First;
+
+            Traverse(FirstNode);
+            
+
+            static void Traverse(LinkedListNode<string> CurrentNode)
+            {
+                
+                if (CurrentNode == null) { 
+                    return;
+                }
+
+                
+                Traverse(CurrentNode.Next);
+                Console.WriteLine(CurrentNode.Value);
+
+            }
+
+        }
+
 
         /*========================================================
          * Function: View the LL
